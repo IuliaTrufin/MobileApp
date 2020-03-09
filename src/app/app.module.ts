@@ -8,9 +8,17 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
+import { OffersComponent } from './offers/offers.component';
+import { ProductsComponent } from './products/products.component';
+import { MapsComponent } from './maps/maps.component';
+import { AccountComponent } from './account/account.component';
+import { AboutComponent } from './about/about.component';
+import { TermsComponent } from './terms/terms.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  // tslint:disable-next-line: max-line-length
+  declarations: [AppComponent, HomeComponent, OffersComponent, ProductsComponent, MapsComponent, AccountComponent, AboutComponent, TermsComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
