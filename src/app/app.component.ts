@@ -4,6 +4,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Plugins, NetworkStatus, PluginListenerHandle } from '@capacitor/core';
+import { Motion, MotionEventResult } from "@capacitor/core";
 
 const { Network } = Plugins;
 
@@ -80,5 +81,12 @@ export class AppComponent implements OnInit {
     });
 
     this.networkStatus = await Network.getStatus();
+    this.addAccelerometerListener(acceleration => { console.log(acceleration.acceleration.x);
+      console.log(acceleration.acceleration.y);
+      console.log(acceleration.acceleration.z);});
+  }
+  
+  addAccelerometerListener(callback: (event: MotionEventResult) => void) {
+    Motion.addListener("accel", callback);
   }
 }
