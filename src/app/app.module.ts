@@ -1,3 +1,4 @@
+import { AgmCoreModule } from '@agm/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -23,6 +24,9 @@ import { TermsComponent } from './terms/terms.component';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDiNV8qGZivQlZxCru_o9T9VPNxmqvitjM'
+    }),
     AppRoutingModule
   ],
   providers: [

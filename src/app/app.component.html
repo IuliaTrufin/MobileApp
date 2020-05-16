@@ -7,8 +7,28 @@
       <ion-title>Starbucks App</ion-title>
     </ion-toolbar>
   </ion-header>
+  <div *ngIf="!networkStatus || !networkStatus.connected" style="height: 1000px;">
+  <ion-header>
+    <ion-toolbar
+      [color]="networkStatus && networkStatus.connected ? 'primary' : 'dark'"
+    >
+      <ion-title>
+        Network Detection
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-    <ion-menu contentId="main-content" type="overlay">
+  <ion-content>
+    <div class="ion-padding">
+      <h1>
+        Connection status:
+        {{ networkStatus && networkStatus.connected ? "Online" : "Offline" }}
+      </h1>
+    </div>
+  </ion-content>
+  </div>
+  <div *ngIf="networkStatus && networkStatus.connected">
+  <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
           <ion-list-header>Starbucks</ion-list-header>
@@ -22,4 +42,6 @@
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>
+    </div>
 </ion-app>
+

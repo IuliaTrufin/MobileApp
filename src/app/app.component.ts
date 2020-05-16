@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Plugins, NetworkStatus, PluginListenerHandle } from '@capacitor/core';
+
+const { Network } = Plugins;
 
 @Component({
   selector: 'app-root',
@@ -10,6 +13,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent implements OnInit {
+  networkStatus: NetworkStatus;
+  networkListener: PluginListenerHandle;
   public selectedIndex = 0;
   public appPages = [
     {
@@ -64,10 +69,16 @@ export class AppComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     const path = window.location.pathname.split('folder/')[1];
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
+    this.networkListener = Network.addListener('networkStatusChange', (status) => {
+      console.log("Network status changed", status);
+      this.networkStatus = status;
+    });
+
+    this.networkStatus = await Network.getStatus();
   }
 }
