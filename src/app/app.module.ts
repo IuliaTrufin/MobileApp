@@ -25,7 +25,7 @@ import { TermsComponent } from './terms/terms.component';
     BrowserModule,
     IonicModule.forRoot(),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDiNV8qGZivQlZxCru_o9T9VPNxmqvitjM'
+      apiKey: ''
     }),
     AppRoutingModule
   ],
