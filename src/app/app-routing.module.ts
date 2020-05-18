@@ -5,13 +5,15 @@ import { AccountComponent } from './account/account.component';
 import { MapsComponent } from './maps/maps.component';
 import { ProductsComponent } from './products/products.component';
 import { OffersComponent } from './offers/offers.component';
+import { AccelerometerComponent } from './accelerometer/accelerometer.component';
+import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -41,6 +43,14 @@ const routes: Routes = [
   {
     path: 'offers',
     component: OffersComponent
+  },
+  {
+    path: 'accelerometer',
+    component: AccelerometerComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
 ];
 

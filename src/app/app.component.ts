@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Plugins, NetworkStatus, PluginListenerHandle } from '@capacitor/core';
 import { Motion, MotionEventResult } from "@capacitor/core";
+import { Navigation, Router } from '@angular/router';
 
 const { Network } = Plugins;
 
@@ -58,7 +60,9 @@ export class AppComponent implements OnInit {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private http:HttpClient,
+    private nav:Router
   ) {
     this.initializeApp();
   }
@@ -81,12 +85,9 @@ export class AppComponent implements OnInit {
     });
 
     this.networkStatus = await Network.getStatus();
-    this.addAccelerometerListener(acceleration => { console.log(acceleration.acceleration.x);
-      console.log(acceleration.acceleration.y);
-      console.log(acceleration.acceleration.z);});
+
+      // this.http.post("http://localhost:51354/api/login/login",{username:"admin",password:"admin1"},{headers:{"Content-Type":"application/json"}}).subscribe(x => this.nav.navigateByUrl("maps"),err => console.log(err));
   }
   
-  addAccelerometerListener(callback: (event: MotionEventResult) => void) {
-    Motion.addListener("accel", callback);
-  }
+  
 }

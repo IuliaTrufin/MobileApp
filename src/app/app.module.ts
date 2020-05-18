@@ -2,6 +2,8 @@ import { AgmCoreModule } from '@agm/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -16,10 +18,13 @@ import { MapsComponent } from './maps/maps.component';
 import { AccountComponent } from './account/account.component';
 import { AboutComponent } from './about/about.component';
 import { TermsComponent } from './terms/terms.component';
+import { AccelerometerComponent } from './accelerometer/accelerometer.component';
+import { LoginComponent } from './login/login.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   // tslint:disable-next-line: max-line-length
-  declarations: [AppComponent, HomeComponent, OffersComponent, ProductsComponent, MapsComponent, AccountComponent, AboutComponent, TermsComponent],
+  declarations: [AppComponent, HomeComponent, OffersComponent, ProductsComponent, MapsComponent, AccountComponent, AboutComponent, TermsComponent, AccelerometerComponent, LoginComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
@@ -27,6 +32,9 @@ import { TermsComponent } from './terms/terms.component';
     AgmCoreModule.forRoot({
       apiKey: ''
     }),
+    HttpClientModule,
+    CommonModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [

@@ -1,0 +1,20 @@
+<div class="container-fluid" style="margin-left: 30px; margin-right: 30px; margin-top: 45px;">
+    <div class="row terms-and-conditions-section">
+      <div class="col-xs-12 text-center">
+        <h1 class="title">Run 5 km/h and get a free coffee</h1>
+      </div>
+      <img _ngcontent-lnx-c1="" src="https://www.dayofthehuman.com/wp-content/uploads/2017/12/Deal-of-the-Day-Buying-Starbucks-for-the-Office-Get-5-For-Your-Trouble-1280x720.jpg" style="float: right; margin:20px 40px 0px 0px;">        
+          <p>
+              Take a screenshot when you reach 5 km/h and show it to a barista in order to get a free coffee in that day
+          </p>
+          <p *ngIf="isSupportedPlatform">
+              Current speed: 
+              <br>
+              X:{{currentAcceleration.x}}
+              <br>
+              y:{{currentAcceleration.y}}
+              <br>
+              z:{{currentAcceleration.z}}
+          </p>
+    </div>
+</div>
