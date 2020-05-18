@@ -10,16 +10,20 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  Username;
+  Password;
   constructor(
     private http:HttpClient,
     private nav:Router
   ) { }
 
   ngOnInit() {
-    this.http.post("http://localhost:51354/api/login/login",{username:"admin1",password:"admin"},{headers:{"Content-Type":"application/json"}}).subscribe(x => this.nav.navigateByUrl("home"),err => console.log(err));
-    var Username=null;
-    var user = event.target.Username.value;
+  }
+
+  onFormSubmit() {
+    this.http.post("http://localhost:51354/api/login/login",{username:this.Username,password:this.Password},{headers:{"Content-Type":"application/json"}}).subscribe(x => this.nav.navigateByUrl("home"),err => console.log(err));
+    console.log(this.Username);
+    console.log(this.Password);
   }
 
 }

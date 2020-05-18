@@ -11,8 +11,8 @@
           <p>
             Password
           </p>
-          <input type="password" id="Password" name="Password">
+          <input type="password" id="Password" name="Password" [(ngModel)]="Password">
           <br><br><br>
-          <input type="submit" value="Submit">
+          <input type="submit" value="Submit" (click)="onFormSubmit()">
     </div>
 </div>
