@@ -1,0 +1,21 @@
+<div
+  class="container-fluid"
+  style="margin-left: 30px; margin-right: 30px; margin-top: 45px;"
+>
+  <div class="row terms-and-conditions-section">
+    <div class="col-xs-12 text-center">
+      <h1 class="title">Coffee contest</h1>
+    </div>
+    <img
+      _ngcontent-lnx-c1=""
+      src="https://popsop.com/wp-content/uploads/mocha_frappuccino_happy_hour_01.jpg"
+      style="float: right; margin: 20px 40px 0px 0px; width: 300px;"
+    />
+    <p>
+      Take a picture with our coffee cups from the promotion and get a chance to
+      win a Lada!
+    </p>
+    <button (click)="takePicture()">camera works!</button>
+    <img *ngIf="!!image" [src]="image" />
+  </div>
+</div>
