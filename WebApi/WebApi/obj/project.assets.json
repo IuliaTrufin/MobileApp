@@ -6076,11 +6076,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\iulia\\source\\repos\\WebApi\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "D:\\MobileComputing\\MobileApp\\WebApi\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "C:\\Users\\iulia\\source\\repos\\WebApi\\WebApi\\WebApi.csproj",
+      "projectPath": "D:\\MobileComputing\\MobileApp\\WebApi\\WebApi\\WebApi.csproj",
       "packagesPath": "C:\\Users\\iulia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\iulia\\source\\repos\\WebApi\\WebApi\\obj\\",
+      "outputPath": "D:\\MobileComputing\\MobileApp\\WebApi\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\iulia\\AppData\\Roaming\\NuGet\\NuGet.Config",
