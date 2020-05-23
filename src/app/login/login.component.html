@@ -1,18 +1,28 @@
-<div class="container-fluid" style="margin-left: 30px; margin-right: 30px; margin-top: 45px;">
-    <div class="row terms-and-conditions-section">
-      <div class="col-xs-12 text-center">
-        <h1 class="title">Login</h1>
-      </div>
-      <br><br>
-          <p>
-              Username
-          </p>
-          <input type="text" id="Username" name="Username" [(ngModel)]="Username">
-          <p>
-            Password
-          </p>
-          <input type="password" id="Password" name="Password" [(ngModel)]="Password">
-          <br><br><br>
-          <input type="submit" value="Submit" (click)="onFormSubmit()">
+<div
+  class="container-fluid"
+  style="margin-left: 30px; margin-right: 30px; margin-top: 45px;"
+>
+  <div class="row terms-and-conditions-section">
+    <div class="col-xs-12 text-center">
+      <h1 class="title">Login</h1>
     </div>
+    <br /><br />
+    <p>
+      Username
+    </p>
+    <input type="text" id="Username" name="Username" [(ngModel)]="Username" />
+    <p>
+      Password
+    </p>
+    <input
+      type="password"
+      id="Password"
+      name="Password"
+      [(ngModel)]="Password"
+    />
+    <br /><br /><br />
+    <input type="submit" value="Submit" (click)="onFormSubmit()" />
+    <br /><br />
+    <input type="button" value="Sign up" [routerLink]="['../account']" />
+  </div>
 </div>

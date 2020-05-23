@@ -22,6 +22,7 @@ import { AccelerometerComponent } from "./accelerometer/accelerometer.component"
 import { LoginComponent } from "./login/login.component";
 import { CommonModule } from "@angular/common";
 import { CameraComponent } from "./camera/camera.component";
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   // tslint:disable-next-line: max-line-length
@@ -37,6 +38,7 @@ import { CameraComponent } from "./camera/camera.component";
     AccelerometerComponent,
     LoginComponent,
     CameraComponent,
+    EditComponent,
   ],
   entryComponents: [],
   imports: [

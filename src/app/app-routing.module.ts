@@ -10,6 +10,7 @@ import { LoginComponent } from "./login/login.component";
 import { NgModule } from "@angular/core";
 import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 import { CameraComponent } from "./camera/camera.component";
+import { EditComponent } from "./edit/edit.component";
 
 const routes: Routes = [
   {
@@ -56,6 +57,10 @@ const routes: Routes = [
   {
     path: "camera",
     component: CameraComponent,
+  },
+  {
+    path: "edit",
+    component: EditComponent,
   },
 ];
 
